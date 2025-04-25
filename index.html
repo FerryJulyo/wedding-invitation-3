@@ -2784,7 +2784,7 @@ Click the help icon above to learn more.
 															<span class="elementor-divider-separator">
 																<span
 																	class="elementor-divider__text elementor-divider__element">
-																	Save The Date </span>
+																	<b id="userName"></b> </span>
 															</span>
 														</div>
 													</div>
@@ -2803,10 +2803,9 @@ Click the help icon above to learn more.
 													<div class="elementor-widget-container">
 														<div class="elementor-button-wrapper">
 															<a class="elementor-button elementor-button-link elementor-size-sm"
-																href="#">
+															onclick="document.getElementById('couple').scrollIntoView({behavior: 'smooth'})">
 																<span class="elementor-button-content-wrapper">
-																	<span class="elementor-button-text">Add to My
-																		Calendar</span>
+																	<span class="elementor-button-text">View Invitation</span>
 																</span>
 															</a>
 														</div>
@@ -2815,7 +2814,7 @@ Click the help icon above to learn more.
 											</div>
 										</div>
 									</div>
-									<div class="elementor-element elementor-element-c78117b e-flex e-con-boxed e-con e-parent"
+									<div class="elementor-element elementor-element-c78117b e-flex e-con-boxed e-con e-parent" id="couple"
 										data-id="c78117b" data-element_type="container">
 										<div class="e-con-inner">
 											<div class="elementor-element elementor-element-359cf14 e-con-full e-flex e-con e-child"
@@ -3969,6 +3968,10 @@ Click the help icon above to learn more.
 
 </html>
 <script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const name = urlParams.get('name') || 'Tamu';
+	document.getElementById('userName').textContent = name;
+
 	document.addEventListener('DOMContentLoaded', function () {
 		const elements = document.querySelectorAll('.elementor-element');
 
